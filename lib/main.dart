@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:language_learing_app/screens/home_page.dart';
 
 void main() {
   runApp(const LanguageLearingApp());
@@ -9,6 +10,9 @@ class LanguageLearingApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
   }
 }
