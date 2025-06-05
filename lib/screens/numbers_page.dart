@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:language_learing_app/models/item.dart';
 
 class NumbersPage extends StatelessWidget {
-   NumbersPage({super.key});
+ const  NumbersPage({super.key});
 
-  final List<ItemModel> numbers=[
+  final List<ItemModel> numbers= const[
     ItemModel(
       sound: 'sounds/numbers/number_one_sound.mp3',
       jpName: 'ichi',
@@ -103,7 +103,7 @@ final Color color;
         children: [
           Container(
             color:const Color(0xffFFF6DC),
-            child: Image.asset(item.image!),
+            child: Image.asset(item.image??"assets/images/numbers/number_one.png"),
           ),
           Expanded(
             child: ItemInfo(item: item,),)

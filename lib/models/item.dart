@@ -6,7 +6,7 @@ class ItemModel{
   final String  jpName;
   final String  enName;
 
-  ItemModel({required this.sound, required this.image, required this.jpName, required this.enName});
+  const ItemModel({required this.sound,  this.image, required this.jpName, required this.enName});
   palySound(){
     final player = AudioPlayer();
     player.play(AssetSource(sound)); 
