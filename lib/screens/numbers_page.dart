@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:language_learing_app/components/custom_scaffold.dart';
+import 'package:language_learing_app/components/list_item.dart';
 import 'package:language_learing_app/models/item.dart';
 
 class NumbersPage extends StatelessWidget {
  const  NumbersPage({super.key});
 
-  final List<ItemModel> numbers= const[
+  final List<ItemModel> numbersList= const[
     ItemModel(
       sound: 'sounds/numbers/number_one_sound.mp3',
       jpName: 'ichi',
@@ -69,91 +71,13 @@ class NumbersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        title:Text("Numbers"),
-        backgroundColor: const Color(0xff46322B),
-      ),
-      body: ListView.builder(
-        itemCount: numbers.length,
-        itemBuilder: (ctx,index){
-          return ListItem(
-            item: numbers[index], 
-            color:const Color(0xffEF9235),
-            );
-        },
-        
-      ),
-    );
+    
+    return  CustomScaffold(
+      itemList: numbersList,
+      addrres: 'Numbers',
+      color:const Color(0xffEF9235),);
+    
+    
   }
 }
 
-
-class ListItem extends StatelessWidget {
-  const ListItem({super.key, required this.item, required this.color});
-
-final ItemModel item;
-final Color color;
-  @override
-  Widget build(BuildContext context) {
-    return Container (
-      color: color,
-      height: 100,
-      child: Row(
-        children: [
-          Container(
-            color:const Color(0xffFFF6DC),
-            child: Image.asset(item.image??"assets/images/numbers/number_one.png"),
-          ),
-          Expanded(
-            child: ItemInfo(item: item,),)
-
-      ],),
-    );
-  }
-}
-
-class ItemInfo extends StatelessWidget {
-  const ItemInfo({super.key, required this.item});
-final ItemModel item;
-  @override
-  Widget build(BuildContext context) {
-    return  Row(
-      children: [
-        Padding(
-          padding: EdgeInsetsGeometry.only(left: 16,),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                item.jpName,
-                style:const TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
-              ),
-               Text(
-                item.enName,
-                style:const TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-          
-          ),
-          Spacer(flex: 1,),
-          IconButton(
-            onPressed: ()=>item.palySound(),
-            icon: Icon(
-              Icons.play_arrow,
-              size: 28,
-              color: Colors.white,
-              ),
-            )
-      ],
-    );
-  }
-}

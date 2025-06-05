@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:language_learing_app/components/custom_scaffold.dart';
+import 'package:language_learing_app/components/list_item.dart';
 import 'package:language_learing_app/models/item.dart';
 import 'package:language_learing_app/screens/numbers_page.dart';
 
@@ -7,85 +9,70 @@ class PhrasesPage extends StatelessWidget {
   final List<ItemModel> phrasesList =const[
      ItemModel(
       sound: 'sounds/phrases/are_you_coming.wav',
-      jpName: 'chich',
+      jpName: '',
       enName: 'Are you coming',
-      image: 'assets/images/numbers/number_onegit.png',
+      image: 'assets/images/numbers/number_one.png',
 
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_two_sound.mp3',
-      jpName: 'Ni',
-      enName: 'two',
+      sound: 'sounds/phrases/dont_forget_to_subscribe.wav',
+      jpName: '',
+      enName: "Don't forget to sub",
       image: 'assets/images/numbers/number_two.png',
 
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'San',
-      enName: 'three',
+      sound: 'sounds/phrases/how_are_you_feeling.wav',
+      jpName: '',
+      enName: 'How are you feeling',
       image: 'assets/images/numbers/number_three.png',
 
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Shi',
-      enName: 'four',
+      sound: 'sounds/phrases/i_love_anime.wav',
+      jpName: '',
+      enName: 'I love Anime',
       image: 'assets/images/numbers/number_four.png',
 
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Go',
-      enName: 'five',
+      sound: 'sounds/phrases/i_love_programming.wav',
+      jpName: '',
+      enName: 'I love programming',
       image: 'assets/images/numbers/number_five.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Roku',
-      enName: 'six',
+      sound: 'sounds/phrases/programming_is_easy.wav',
+      jpName: '',
+      enName: 'Programming is easy',
       image: 'assets/images/numbers/number_six.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Sebun',
-      enName: 'seven',
+      sound: 'sounds/phrases/what_is_your_name.wav',
+      jpName: '',
+      enName: 'What is your name',
       image: 'assets/images/numbers/number_seven.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'hachi',
-      enName: 'eight',
+      sound: 'sounds/phrases/where_are_you_going.wav',
+      jpName: '',
+      enName: 'Where are you going',
       image: 'assets/images/numbers/number_eight.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Kyū',
-      enName: 'nine',
+      sound: 'assets/sounds/phrases/yes_im_coming.wav',
+      jpName: '',
+      enName: 'Yes im coming',
       image: 'assets/images/numbers/number_nine.png',
     ),
-    ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Jū',
-      enName: 'ten',
-      image: 'assets/images/numbers/number_ten.png',
-    ),
+  
   ];
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        title:const Text("Phrases"),
-        backgroundColor:const Color(0xff46322B),
-      ),
-      body: ListView.builder(
-        itemCount: phrasesList.length,
-        itemBuilder: (ctx,index){
-          return ListItem(
-            item: phrasesList[index],
-            color:const Color(0xff50ADC7),
-          );
-      }),
-    );
+    return  CustomScaffold(
+      itemList: phrasesList,
+      addrres: 'Phrases',
+      color:const Color(0xff50ADC7),);
   }
 }

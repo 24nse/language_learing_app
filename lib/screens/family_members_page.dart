@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:language_learing_app/components/custom_scaffold.dart';
+import 'package:language_learing_app/components/list_item.dart';
 import 'package:language_learing_app/models/item.dart';
 import 'package:language_learing_app/screens/numbers_page.dart';
 
@@ -6,82 +8,76 @@ class FamilyMembersPage extends StatelessWidget {
   const FamilyMembersPage({super.key});
 final List<ItemModel> numbers= const [
    ItemModel(
+      sound: 'sounds/family_members/daughter.wav',
+      jpName: '',
+      enName: 'Daughter',
+      image: 'assets/images/family_members/family_daughter.png',
+    ),
+   ItemModel(
+    
       sound: 'sounds/family_members/father.wav',
-      jpName: 'chich',
+      jpName: '',
       enName: 'father',
       image: 'assets/images/family_members/family_father.png',
     ),
+   
     ItemModel(
-      sound: 'sounds/numbers/number_two_sound.mp3',
-      jpName: 'Ni',
-      enName: 'two',
-      image: 'assets/images/numbers/number_two.png',
+      sound: 'sounds/family_members/grand father.wav',
+      jpName: '',
+      enName: 'Grand Father',
+      image: 'assets/images/family_members/family_grandfather.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'San',
-      enName: 'three',
-      image: 'assets/images/numbers/number_three.png',
+      sound: 'sounds/family_members/grand mother.wav',
+      jpName: '',
+      enName: 'Grand mother',
+      image: 'assets/images/family_members/family_grandfather.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Shi',
-      enName: 'four',
-      image: 'assets/images/numbers/number_four.png',
+      sound: 'sounds/family_members/mother.wav',
+      jpName: '',
+      enName: 'Mother',
+      image: 'assets/images/family_members/family_mother.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Go',
-      enName: 'five',
-      image: 'assets/images/numbers/number_five.png',
+      sound: 'sounds/family_members/older bother.wav',
+      jpName: '',
+      enName: 'Older Bother',
+      image: 'assets/images/family_members/family_older_brother.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Roku',
-      enName: 'six',
-      image: 'assets/images/numbers/number_six.png',
+      sound: 'sounds/family_members/older sister.wav',
+      jpName: '',
+      enName: 'Older Sister',
+      image: 'assets/images/family_members/family_older_sister.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Sebun',
-      enName: 'seven',
-      image: 'assets/images/numbers/number_seven.png',
+      sound: 'sounds/family_members/son.wav',
+      jpName: '',
+      enName: 'Son',
+      image: 'assets/images/family_members/family_son.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'hachi',
-      enName: 'eight',
-      image: 'assets/images/numbers/number_eight.png',
+      sound: 'sounds/family_members/younger brohter.wav',
+      jpName: '',
+      enName: 'Younger Brohter',
+      image: 'assets/images/family_members/family_younger_brother.png',
     ),
     ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Kyū',
-      enName: 'nine',
-      image: 'assets/images/numbers/number_nine.png',
-    ),
-    ItemModel(
-      sound: 'sounds/numbers/number_one_sound.mp3',
-      jpName: 'Jū',
-      enName: 'ten',
-      image: 'assets/images/numbers/number_ten.png',
+      sound: 'sounds/family_members/younger sister.wav',
+      jpName: '',
+      enName: 'Younger Sister',
+      image: 'assets/images/family_members/family_younger_sister.png',
     ),
 
 ];
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-appBar: AppBar(
-  title:const Text("Family Members"),
-  backgroundColor: Color(0xff46322B),
-),
-body: ListView.builder(
-  itemCount: numbers.length,
-  itemBuilder: (ctx,index){
-   return ListItem(
-    item: numbers[index],
-    color:const Color(0xff558B37),
-   );
-  }),
-    );
-  }
+    return  
+    
+     CustomScaffold(
+      itemList: numbers,
+      addrres: 'Family Members',
+      color:const Color(0xff558B37),);
+    }
 }

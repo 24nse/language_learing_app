@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:language_learing_app/components/category.dart';
+import 'package:language_learing_app/screens/colors_page.dart';
 import 'package:language_learing_app/screens/family_members_page.dart';
 import 'package:language_learing_app/screens/numbers_page.dart';
 import 'package:language_learing_app/screens/phrases_page.dart';
@@ -35,7 +36,12 @@ class HomePage extends StatelessWidget {
             onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (ctx)=>PhrasesPage()));
           },),
-          
+               Category(
+            text: "Colors",
+            color:const Color(0xff46322B),
+            onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>ColorsPage()));
+          },),
         ],
       ),
     );
